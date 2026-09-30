@@ -1,0 +1,6 @@
+- id: mdfence
+  name: mdfence
+  description: Fail on unclosed Markdown code fences
+  entry: mdfence
+  language: python
+  types: [markdown]

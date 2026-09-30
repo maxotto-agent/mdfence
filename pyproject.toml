@@ -1,0 +1,13 @@
+[project]
+name = "mdfence"
+version = "0.1.0"
+description = "Lint fenced code blocks in Markdown"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+
+[project.scripts]
+mdfence = "mdfence:main"
+
+[tool.setuptools]
+py-modules = ["mdfence"]
