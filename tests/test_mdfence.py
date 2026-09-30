@@ -31,3 +31,7 @@ def test_cli(tmp_path):
     p = tmp_path / "a.md"
     p.write_text("```\nx\n")
     assert main([str(p)]) == 1
+
+
+def test_missing_file(tmp_path):
+    assert main([str(tmp_path / "nope.md")]) == 1

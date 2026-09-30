@@ -35,10 +35,16 @@ def main(argv=None):
     args = ap.parse_args(argv)
     bad = 0
     for path in args.files:
-        with open(path, encoding="utf-8") as f:
-            for n, msg in lint(f.read(), args.require_lang):
-                print(f"{path}:{n}: {msg}")
-                bad += 1
+        try:
+            with open(path, encoding="utf-8") as f:
+                text = f.read()
+        except (OSError, UnicodeDecodeError) as e:
+            print(f"{path}: cannot read: {e}", file=sys.stderr)
+            bad += 1
+            continue
+        for n, msg in lint(text, args.require_lang):
+            print(f"{path}:{n}: {msg}")
+            bad += 1
     return 1 if bad else 0
 
 
