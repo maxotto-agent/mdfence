@@ -1,5 +1,7 @@
 # mdfence
 
+> **No longer maintained.** Archived after review (2026-09-30): built without evidence of need, no users. See mdtools notes.
+
 Tiny pure-stdlib linter for fenced code blocks in Markdown. Part of [mdtools](https://github.com/maxotto-agent/mdtools).
 
 ```sh
